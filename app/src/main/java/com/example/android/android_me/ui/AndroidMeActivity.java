@@ -16,7 +16,9 @@
 
 package com.example.android.android_me.ui;
 
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -43,6 +45,12 @@ public class AndroidMeActivity extends AppCompatActivity {
         legFragment.setListIndex(0);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
+
+        // Example code to replace a fragment using the manager
+//        Fragment frag = new BodyPartFragment();
+//        int containerID = R.id.head_container;
+//        FragmentTransaction ft = fragmentManager.beginTransaction();
+//        ft.replace(containerID, frag). commit();
 
         fragmentManager.beginTransaction().add(R.id.head_container, headFragment).add(R.id.body_container, bodyFragment).add(R.id.leg_container, legFragment).commit();
 //        fragmentManager.beginTransaction().add(R.id.body_container, bodyFragment).commit();
