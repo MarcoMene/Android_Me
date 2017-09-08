@@ -31,18 +31,17 @@ public class AndroidMeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_android_me);
 
         // Only create new fragments when there is no previously saved state
         if(savedInstanceState == null) {
 
             // TODO (5) Retrieve list index values that were sent through an intent; use them to display the desired Android-Me body part image
                 // Use setListindex(int index) to set the list index for all BodyPartFragments
-            Intent intent = this.getIntent();
-            Bundle bundle = intent.getBundleExtra("b");
-            int headIndex = (int) bundle.get("headIndex");
-            int bodyIndex = (int) bundle.get("bodyIndex");
-            int legIndex = (int) bundle.get("legIndex");
+            Intent intent = getIntent();
+            int headIndex = intent.getIntExtra("headIndex", 0);
+            int bodyIndex = intent.getIntExtra("bodyIndex", 0);
+            int legIndex = intent.getIntExtra("legIndex", 0);
 
             // Create a new head BodyPartFragment
             BodyPartFragment headFragment = new BodyPartFragment();
