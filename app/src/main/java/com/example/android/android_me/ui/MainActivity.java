@@ -29,6 +29,7 @@ import com.example.android.android_me.R;
 // Implement the MasterListFragment callback, OnImageClickListener
 public class MainActivity extends AppCompatActivity implements MasterListFragment.OnImageClickListener {
 
+    // IT WORKS!
 
     // TODO (2) Based on where a user has clicked, store the selected list index for the head, body, and leg BodyPartFragments
     int headIndex = 0;
